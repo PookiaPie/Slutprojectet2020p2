@@ -35,7 +35,7 @@ Which pokemon will you get out!?
 
             np = Console.ReadLine();
 
-            Console.WriteLine("You Choose " + np);
+            Console.WriteLine("You Choose a poopy " + np);
 
 
 
