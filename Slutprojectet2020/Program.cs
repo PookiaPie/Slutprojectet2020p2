@@ -14,14 +14,7 @@ namespace Slutprojectet2020
         {
             RestClient client = new RestClient("https://pokeapi.co/api/v2/"); //object som reagerar som en client
 
-            RestRequest request = new RestRequest("pokemon/eevee");
-
-            IRestResponse response = client.Get(request);
-            //använder min klient för att hämta den här requesten. 
-
-            Pokemon p = JsonConvert.DeserializeObject<Pokemon>(response.Content);
-            //ta den här json stringen och utgå från denna
-
+            Pokemon pn = new Pokemon(); 
 
             Console.WriteLine(@"
 *Intense Pokemon Music Playing*
@@ -31,19 +24,20 @@ Which pokemon will you get out!?
 [Choose pokemon]
 ");
 
-            string np = p.choosePokemon;       //gör så att man kan namnge sin pokemon
-
+            string np = pn.choosePokemon;       //gör så att man kan välja sin pokemon
             np = Console.ReadLine();
+            Console.WriteLine("You Choose " + np);
 
-            Console.WriteLine("You Choose a poopy " + np);
-
-
-
+            RestRequest request = new RestRequest("pokemon/" + np);
+            IRestResponse response = client.Get(request);
+            //använder min klient för att hämta den här requesten. 
+            Pokemon p = JsonConvert.DeserializeObject<Pokemon>(response.Content);
+            //ta den här json stringen och utgå från denna
             
 
-
-            Console.WriteLine(p.Name + " (" + p.BaseExperience + ")" );
-
+            Console.WriteLine(p.Name + " (" + p.BaseExperience + ")" + @"
+Theese are your abilities: ");
+            
             for (int i = 0; i < 4; i++)
             {
                 Console.WriteLine("Ability " + i + " " + p.Moves[i].MoveMove.Name);
