@@ -14,7 +14,7 @@ namespace Slutprojectet2020
         {
             RestClient client = new RestClient("https://pokeapi.co/api/v2/"); //object som reagerar som en client
 
-            Pokemon pn = new Pokemon(); 
+            Player pn = new Player(); 
 
             Console.WriteLine(@"
 *Intense Pokemon Music Playing*
@@ -24,7 +24,7 @@ Which pokemon will you get out!?
 [Choose pokemon]
 ");
 
-            string np = pn.choosePokemon;       //gör så att man kan välja sin pokemon
+            string np = pn.choosePokemonPlayer;       //gör så att man kan välja sin pokemon
             np = Console.ReadLine();
             Console.WriteLine("You Choose " + np);
 
