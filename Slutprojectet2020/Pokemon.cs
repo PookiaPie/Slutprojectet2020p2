@@ -15,7 +15,7 @@ namespace Slutprojectet2020
 
         protected int deffens = 0;
         protected int strength = 0;
-        public int hp = 100;
+        public int hp = 0;
         //public string choosePokemon;
 
         [JsonProperty("abilities")]

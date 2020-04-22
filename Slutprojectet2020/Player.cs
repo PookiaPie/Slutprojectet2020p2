@@ -12,6 +12,7 @@ namespace Slutprojectet2020
         {
             strength = generator.Next(60, 100);
             deffens = generator.Next(10, 60);
+            hp = generator.Next(70, 100);
         }
 
         public string choosePokemonPlayer;

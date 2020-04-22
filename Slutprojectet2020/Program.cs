@@ -64,9 +64,15 @@ Theese are your aponments abilities: ");
                 Console.WriteLine(i + 1 + ") " + AI.Moves[i].MoveMove.Name);
             }
 
+            Console.WriteLine("Fight!");
+
+
+
+
+
+
 
             Console.ReadLine();
-
         }
     }
 }
